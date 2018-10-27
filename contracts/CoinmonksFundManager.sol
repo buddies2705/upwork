@@ -3,9 +3,8 @@ pragma solidity ^0.4.24;
 import "openzeppelin-solidity/contracts/payment/escrow/Escrow.sol";
 
 
-contract CoinmonksFundManager is Escrow{
+contract CoinmonksFundManager{
 
-	Escrow escrow;
 
 	constructor () public{
 		escrow = new Escrow();
