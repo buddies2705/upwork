@@ -1,0 +1,30 @@
+pragma solidity ^0.4.24;
+
+import "openzeppelin-solidity/contracts/payment/escrow/Escrow.sol";
+
+
+contract CoinmonksFundManager is Escrow{
+
+	Escrow escrow;
+
+	constructor () public{
+		escrow = new Escrow();
+	}
+
+	function settlement(address employer , address candidate){
+		//settle employee and candidate
+		//withdraw from escrow
+		//Pay candidate
+		//return sucess
+	}
+
+	function partialSettement(address employer, address candidate , address partialEmployment){
+		//settle employer and candidate and refund parial employer money
+		//withdraw from escrow give amount
+		// pay candidate
+		// pay employer
+		//return sucess
+	}
+
+}
+

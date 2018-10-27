@@ -1,0 +1,2913 @@
+{
+  "contractName": "CoinmonksInternal",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "recipient",
+          "type": "address"
+        }
+      ],
+      "name": "transferPrimary",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "payee",
+          "type": "address"
+        }
+      ],
+      "name": "withdraw",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "employer",
+          "type": "address"
+        },
+        {
+          "name": "candidate",
+          "type": "address"
+        },
+        {
+          "name": "partialEmployment",
+          "type": "address"
+        }
+      ],
+      "name": "partialSettement",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "employer",
+          "type": "address"
+        },
+        {
+          "name": "candidate",
+          "type": "address"
+        }
+      ],
+      "name": "settlement",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "primary",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "payee",
+          "type": "address"
+        }
+      ],
+      "name": "depositsOf",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "payee",
+          "type": "address"
+        }
+      ],
+      "name": "deposit",
+      "outputs": [],
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "payee",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "weiAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "Deposited",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "payee",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "weiAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "Withdrawn",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "recipient",
+          "type": "address"
+        }
+      ],
+      "name": "PrimaryTransferred",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_jobId",
+          "type": "uint256"
+        },
+        {
+          "name": "_candidate",
+          "type": "address"
+        },
+        {
+          "name": "_employer",
+          "type": "address"
+        },
+        {
+          "name": "_deposit",
+          "type": "uint256"
+        },
+        {
+          "name": "_refund",
+          "type": "uint256"
+        },
+        {
+          "name": "_state",
+          "type": "uint8"
+        }
+      ],
+      "name": "startContract",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_jobId",
+          "type": "uint256"
+        },
+        {
+          "name": "_candidate",
+          "type": "address"
+        },
+        {
+          "name": "_employer",
+          "type": "address"
+        },
+        {
+          "name": "_deposit",
+          "type": "uint256"
+        },
+        {
+          "name": "_refund",
+          "type": "uint256"
+        },
+        {
+          "name": "_state",
+          "type": "uint8"
+        }
+      ],
+      "name": "endContractComplete",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_jobId",
+          "type": "uint256"
+        },
+        {
+          "name": "_candidate",
+          "type": "address"
+        },
+        {
+          "name": "_employer",
+          "type": "address"
+        },
+        {
+          "name": "_deposit",
+          "type": "uint256"
+        },
+        {
+          "name": "_refund",
+          "type": "uint256"
+        },
+        {
+          "name": "_state",
+          "type": "uint8"
+        }
+      ],
+      "name": "endContractPartial",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_jobId",
+          "type": "uint256"
+        },
+        {
+          "name": "_candidate",
+          "type": "address"
+        },
+        {
+          "name": "_employer",
+          "type": "address"
+        },
+        {
+          "name": "_deposit",
+          "type": "uint256"
+        },
+        {
+          "name": "_refund",
+          "type": "uint256"
+        },
+        {
+          "name": "_state",
+          "type": "uint8"
+        }
+      ],
+      "name": "dispute",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_jobId",
+          "type": "uint256"
+        },
+        {
+          "name": "_candidate",
+          "type": "address"
+        },
+        {
+          "name": "_employer",
+          "type": "address"
+        },
+        {
+          "name": "_deposit",
+          "type": "uint256"
+        },
+        {
+          "name": "_refund",
+          "type": "uint256"
+        },
+        {
+          "name": "_state",
+          "type": "uint8"
+        }
+      ],
+      "name": "getEscrowDeposit",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b50336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055507f4101e71e974f68df5e9730cc223280b41654676bbb052cdcc735c3337e64d2d96000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff16604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390a16100dd61013f565b604051809103906000f0801580156100f9573d6000803e3d6000fd5b50600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555061014f565b60405161079480610c4583390190565b610ae78061015e6000396000f3006080604052600436106100ba576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630418d93e146100bf578063165746301461014d5780632348238c146101db57806351cff8d91461021e5780637f2061cf146102615780637f44fbef146102e457806384fc791f14610372578063a118bb32146103d5578063a831614214610463578063c6dbdf61146104f1578063e3a9db1a14610548578063f340fa011461059f575b600080fd5b3480156100cb57600080fd5b5061014b60048036038101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035906020019092919080359060200190929190803560ff1690602001909291905050506105d5565b005b34801561015957600080fd5b506101d960048036038101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035906020019092919080359060200190929190803560ff1690602001909291905050506105dd565b005b3480156101e757600080fd5b5061021c600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506105e5565b005b34801561022a57600080fd5b5061025f600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610743565b005b34801561026d57600080fd5b506102e2600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506108c0565b005b3480156102f057600080fd5b5061037060048036038101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035906020019092919080359060200190929190803560ff1690602001909291905050506108c5565b005b34801561037e57600080fd5b506103d3600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506108cd565b005b3480156103e157600080fd5b5061046160048036038101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035906020019092919080359060200190929190803560ff1690602001909291905050506108d1565b005b34801561046f57600080fd5b506104ef60048036038101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035906020019092919080359060200190929190803560ff1690602001909291905050506108d9565b005b3480156104fd57600080fd5b506105066108e1565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561055457600080fd5b50610589600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061090a565b6040518082815260200191505060405180910390f35b6105d3600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610953565b005b505050505050565b505050505050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561064057600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561067c57600080fd5b806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055507f4101e71e974f68df5e9730cc223280b41654676bbb052cdcc735c3337e64d2d96000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff16604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390a150565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156107a057600080fd5b600160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205490506000600160008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055508173ffffffffffffffffffffffffffffffffffffffff166108fc829081150290604051600060405180830381858888f1935050505015801561086d573d6000803e3d6000fd5b508173ffffffffffffffffffffffffffffffffffffffff167f7084f5476618d8e60b11ef0d7d3f06914655adb8793e28ff7f018d4c76d505d5826040518082815260200191505060405180910390a25050565b505050565b505050505050565b5050565b505050505050565b505050505050565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b6000600160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050919050565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156109b057600080fd5b349050610a0581600160008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054610a9a90919063ffffffff16565b600160008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055508173ffffffffffffffffffffffffffffffffffffffff167f2da466a7b24304f47e87fa2e1e5a81b9831ce54fec19055ce277ca2f39ba42c4826040518082815260200191505060405180910390a25050565b6000808284019050838110151515610ab157600080fd5b80915050929150505600a165627a7a72305820eb5d099230bb85e3fa1fb179edd7dcad6337b6bec28849e931e5bb869e14286f00296080604052336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055507f4101e71e974f68df5e9730cc223280b41654676bbb052cdcc735c3337e64d2d96000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff16604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390a16106bd806100d76000396000f30060806040526004361061006d576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680632348238c1461007257806351cff8d9146100b5578063c6dbdf61146100f8578063e3a9db1a1461014f578063f340fa01146101a6575b600080fd5b34801561007e57600080fd5b506100b3600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506101dc565b005b3480156100c157600080fd5b506100f6600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061033a565b005b34801561010457600080fd5b5061010d6104b7565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561015b57600080fd5b50610190600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506104e0565b6040518082815260200191505060405180910390f35b6101da600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610529565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561023757600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561027357600080fd5b806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055507f4101e71e974f68df5e9730cc223280b41654676bbb052cdcc735c3337e64d2d96000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff16604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390a150565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561039757600080fd5b600160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205490506000600160008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055508173ffffffffffffffffffffffffffffffffffffffff166108fc829081150290604051600060405180830381858888f19350505050158015610464573d6000803e3d6000fd5b508173ffffffffffffffffffffffffffffffffffffffff167f7084f5476618d8e60b11ef0d7d3f06914655adb8793e28ff7f018d4c76d505d5826040518082815260200191505060405180910390a25050565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b6000600160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050919050565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561058657600080fd5b3490506105db81600160008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205461067090919063ffffffff16565b600160008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055508173ffffffffffffffffffffffffffffffffffffffff167f2da466a7b24304f47e87fa2e1e5a81b9831ce54fec19055ce277ca2f39ba42c4826040518082815260200191505060405180910390a25050565b600080828401905083811015151561068757600080fd5b80915050929150505600a165627a7a72305820af260a558a22ae033a5e83b8978ce4b384413dfa96b895f02dd4f92730d683670029",
+  "deployedBytecode": "0x6080604052600436106100ba576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630418d93e146100bf578063165746301461014d5780632348238c146101db57806351cff8d91461021e5780637f2061cf146102615780637f44fbef146102e457806384fc791f14610372578063a118bb32146103d5578063a831614214610463578063c6dbdf61146104f1578063e3a9db1a14610548578063f340fa011461059f575b600080fd5b3480156100cb57600080fd5b5061014b60048036038101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035906020019092919080359060200190929190803560ff1690602001909291905050506105d5565b005b34801561015957600080fd5b506101d960048036038101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035906020019092919080359060200190929190803560ff1690602001909291905050506105dd565b005b3480156101e757600080fd5b5061021c600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506105e5565b005b34801561022a57600080fd5b5061025f600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610743565b005b34801561026d57600080fd5b506102e2600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506108c0565b005b3480156102f057600080fd5b5061037060048036038101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035906020019092919080359060200190929190803560ff1690602001909291905050506108c5565b005b34801561037e57600080fd5b506103d3600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506108cd565b005b3480156103e157600080fd5b5061046160048036038101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035906020019092919080359060200190929190803560ff1690602001909291905050506108d1565b005b34801561046f57600080fd5b506104ef60048036038101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035906020019092919080359060200190929190803560ff1690602001909291905050506108d9565b005b3480156104fd57600080fd5b506105066108e1565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561055457600080fd5b50610589600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061090a565b6040518082815260200191505060405180910390f35b6105d3600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610953565b005b505050505050565b505050505050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561064057600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561067c57600080fd5b806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055507f4101e71e974f68df5e9730cc223280b41654676bbb052cdcc735c3337e64d2d96000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff16604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390a150565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156107a057600080fd5b600160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205490506000600160008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055508173ffffffffffffffffffffffffffffffffffffffff166108fc829081150290604051600060405180830381858888f1935050505015801561086d573d6000803e3d6000fd5b508173ffffffffffffffffffffffffffffffffffffffff167f7084f5476618d8e60b11ef0d7d3f06914655adb8793e28ff7f018d4c76d505d5826040518082815260200191505060405180910390a25050565b505050565b505050505050565b5050565b505050505050565b505050505050565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b6000600160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050919050565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156109b057600080fd5b349050610a0581600160008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054610a9a90919063ffffffff16565b600160008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055508173ffffffffffffffffffffffffffffffffffffffff167f2da466a7b24304f47e87fa2e1e5a81b9831ce54fec19055ce277ca2f39ba42c4826040518082815260200191505060405180910390a25050565b6000808284019050838110151515610ab157600080fd5b80915050929150505600a165627a7a72305820eb5d099230bb85e3fa1fb179edd7dcad6337b6bec28849e931e5bb869e14286f0029",
+  "sourceMap": "65:1479:1:-;;;312:26;8:9:-1;5:2;;;30:1;27;20:12;5:2;312:26:1;396:10:4;385:8;;:21;;;;;;;;;;;;;;;;;;417:28;436:8;;;;;;;;;;;417:28;;;;;;;;;;;;;;;;;;;;;;190:12:0;;:::i;:::-;;;;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;190:12:0;181:6;;:21;;;;;;;;;;;;;;;;;;65:1479:1;;;;;;;;;;;;:::o;:::-;;;;;;;",
+  "deployedSourceMap": "65:1479:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1352:182;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1352:182:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;639:225;;8:9:-1;5:2;;;30:1;27;20:12;5:2;639:225:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;855:171:4;;8:9:-1;5:2;;;30:1;27;20:12;5:2;855:171:4;;;;;;;;;;;;;;;;;;;;;;;;;;;;1531:191:5;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1531:191:5;;;;;;;;;;;;;;;;;;;;;;;;;;;;368:253:0;;8:9:-1;5:2;;;30:1;27;20:12;5:2;368:253:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;387:203:1;;8:9:-1;5:2;;;30:1;27;20:12;5:2;387:203:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;209:156:0;;8:9:-1;5:2;;;30:1;27;20:12;5:2;209:156:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1135:213:1;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1135:213:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;868:263;;8:9:-1;5:2;;;30:1;27;20:12;5:2;868:263:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;664:75:4;;8:9:-1;5:2;;;30:1;27;20:12;5:2;664:75:4;;;;;;;;;;;;;;;;;;;;;;;;;;;973:99:5;;8:9:-1;5:2;;;30:1;27;20:12;5:2;973:99:5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1201:185;;;;;;;;;;;;;;;;;;;;;;;;;;;;1352:182:1;;;;;;;:::o;639:225::-;;;;;;;:::o;855:171:4:-;586:8;;;;;;;;;;;572:22;;:10;:22;;;564:31;;;;;;;;953:1;932:23;;:9;:23;;;;924:32;;;;;;;;973:9;962:8;;:20;;;;;;;;;;;;;;;;;;993:28;1012:8;;;;;;;;;;;993:28;;;;;;;;;;;;;;;;;;;;;;855:171;:::o;1531:191:5:-;1589:15;586:8:4;;;;;;;;;;;572:22;;:10;:22;;;564:31;;;;;;;;1607:9:5;:16;1617:5;1607:16;;;;;;;;;;;;;;;;1589:34;;1649:1;1630:9;:16;1640:5;1630:16;;;;;;;;;;;;;;;:20;;;;1657:5;:14;;:23;1672:7;1657:23;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1657:23:5;1702:5;1692:25;;;1709:7;1692:25;;;;;;;;;;;;;;;;;;1531:191;;:::o;368:253:0:-;;;;:::o;387:203:1:-;;;;;;;:::o;209:156:0:-;;;:::o;1135:213:1:-;;;;;;;:::o;868:263::-;;;;;;;:::o;664:75:4:-;704:7;726:8;;;;;;;;;;;719:15;;664:75;:::o;973:99:5:-;1029:7;1051:9;:16;1061:5;1051:16;;;;;;;;;;;;;;;;1044:23;;973:99;;;:::o;1201:185::-;1266:14;586:8:4;;;;;;;;;;;572:22;;:10;:22;;;564:31;;;;;;;;1283:9:5;1266:26;;1317:28;1338:6;1317:9;:16;1327:5;1317:16;;;;;;;;;;;;;;;;:20;;:28;;;;:::i;:::-;1298:9;:16;1308:5;1298:16;;;;;;;;;;;;;;;:47;;;;1367:5;1357:24;;;1374:6;1357:24;;;;;;;;;;;;;;;;;;1201:185;;:::o;1272:131:3:-;1330:7;1345:9;1361:1;1357;:5;1345:17;;1381:1;1376;:6;;1368:15;;;;;;;;1397:1;1390:8;;1272:131;;;;;:::o",
+  "source": "pragma solidity ^0.4.24;\n\nimport \"./CoinmonksFundManager.sol\";\n\n\ncontract CoinmonksInternal is CoinmonksFundManager{\n\n\tenum JobState { Active, Refund , Close , Dispute}\n\n\n\tstruct JobContract{\n\t\tuint256 jobId; \n\t\taddress candidate;\n\t\taddress employer;\n\t\tuint256 deposit;\n\t\tuint256 refund;\n\t\tJobState state;\n\t}\n\n  constructor() public{\n\n  }\n\n  //should only be run by Coinmonks contract\n  function startContract(uint256 _jobId, \n\t\taddress _candidate,\n\t\taddress _employer,\n\t\tuint256 _deposit,\n\t\tuint256 _refund,\n\t\tJobState _state) {\n  \t//change state\n  \t//escrow employer money\n  \t//event \n  }\n\n  //should only be run be Coinmonks contract\n  function endContractComplete(uint256 _jobId, \n\t\taddress _candidate,\n\t\taddress _employer,\n\t\tuint256 _deposit,\n\t\tuint256 _refund,\n\t\tJobState _state){\n  \t//change state\n  \t//take fee\n  \t//give money to candidate \n  \t//event \n  }\n\n  function endContractPartial(uint256 _jobId, \n\t\taddress _candidate,\n\t\taddress _employer,\n\t\tuint256 _deposit,\n\t\tuint256 _refund,\n\t\tJobState _state){\n  \t//change state\n  \t//take fee\n  \t//give money to candidate\n  \t//return back extra money to employer\n  \t//event\n  }\n\n  function dispute(uint256 _jobId, \n\t\taddress _candidate,\n\t\taddress _employer,\n\t\tuint256 _deposit,\n\t\tuint256 _refund,\n\t\tJobState _state){\n  \t//change state\n  \t//put money to coinmonks dispute contract\n  \t//event\n  }\n\n  function getEscrowDeposit(uint256 _jobId, \n\t\taddress _candidate,\n\t\taddress _employer,\n\t\tuint256 _deposit,\n\t\tuint256 _refund,\n\t\tJobState _state){\n  \t// return escrow deposit value\n  }\n\n\n\n\n\n\n\n\n}",
+  "sourcePath": "/home/batman/code/solidity/contracts/CoinmonksInternal.sol",
+  "ast": {
+    "absolutePath": "/home/batman/code/solidity/contracts/CoinmonksInternal.sol",
+    "exportedSymbols": {
+      "CoinmonksInternal": [
+        143
+      ]
+    },
+    "id": 144,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 37,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:1"
+      },
+      {
+        "absolutePath": "/home/batman/code/solidity/contracts/CoinmonksFundManager.sol",
+        "file": "./CoinmonksFundManager.sol",
+        "id": 38,
+        "nodeType": "ImportDirective",
+        "scope": 144,
+        "sourceUnit": 36,
+        "src": "26:36:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 39,
+              "name": "CoinmonksFundManager",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 35,
+              "src": "95:20:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_CoinmonksFundManager_$35",
+                "typeString": "contract CoinmonksFundManager"
+              }
+            },
+            "id": 40,
+            "nodeType": "InheritanceSpecifier",
+            "src": "95:20:1"
+          }
+        ],
+        "contractDependencies": [
+          462,
+          364,
+          35
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 143,
+        "linearizedBaseContracts": [
+          143,
+          35,
+          462,
+          364
+        ],
+        "name": "CoinmonksInternal",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "CoinmonksInternal.JobState",
+            "id": 45,
+            "members": [
+              {
+                "id": 41,
+                "name": "Active",
+                "nodeType": "EnumValue",
+                "src": "135:6:1"
+              },
+              {
+                "id": 42,
+                "name": "Refund",
+                "nodeType": "EnumValue",
+                "src": "143:6:1"
+              },
+              {
+                "id": 43,
+                "name": "Close",
+                "nodeType": "EnumValue",
+                "src": "152:5:1"
+              },
+              {
+                "id": 44,
+                "name": "Dispute",
+                "nodeType": "EnumValue",
+                "src": "160:7:1"
+              }
+            ],
+            "name": "JobState",
+            "nodeType": "EnumDefinition",
+            "src": "119:49:1"
+          },
+          {
+            "canonicalName": "CoinmonksInternal.JobContract",
+            "id": 58,
+            "members": [
+              {
+                "constant": false,
+                "id": 47,
+                "name": "jobId",
+                "nodeType": "VariableDeclaration",
+                "scope": 58,
+                "src": "194:13:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 46,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "194:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 49,
+                "name": "candidate",
+                "nodeType": "VariableDeclaration",
+                "scope": 58,
+                "src": "212:17:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 48,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "212:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 51,
+                "name": "employer",
+                "nodeType": "VariableDeclaration",
+                "scope": 58,
+                "src": "233:16:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 50,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "233:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 53,
+                "name": "deposit",
+                "nodeType": "VariableDeclaration",
+                "scope": 58,
+                "src": "253:15:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 52,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "253:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 55,
+                "name": "refund",
+                "nodeType": "VariableDeclaration",
+                "scope": 58,
+                "src": "272:14:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 54,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "272:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 57,
+                "name": "state",
+                "nodeType": "VariableDeclaration",
+                "scope": 58,
+                "src": "290:14:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_JobState_$45",
+                  "typeString": "enum CoinmonksInternal.JobState"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 56,
+                  "name": "JobState",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 45,
+                  "src": "290:8:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_JobState_$45",
+                    "typeString": "enum CoinmonksInternal.JobState"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "JobContract",
+            "nodeType": "StructDefinition",
+            "scope": 143,
+            "src": "172:136:1",
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 61,
+              "nodeType": "Block",
+              "src": "332:6:1",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 62,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 59,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "323:2:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 60,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "332:0:1"
+            },
+            "scope": 143,
+            "src": "312:26:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 77,
+              "nodeType": "Block",
+              "src": "528:62:1",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 78,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "startContract",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 75,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 64,
+                  "name": "_jobId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 78,
+                  "src": "410:14:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 63,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "410:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 66,
+                  "name": "_candidate",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 78,
+                  "src": "429:18:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 65,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "429:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 68,
+                  "name": "_employer",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 78,
+                  "src": "451:17:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 67,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "451:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 70,
+                  "name": "_deposit",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 78,
+                  "src": "472:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 69,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "472:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 72,
+                  "name": "_refund",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 78,
+                  "src": "492:15:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 71,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "492:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 74,
+                  "name": "_state",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 78,
+                  "src": "511:15:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_JobState_$45",
+                    "typeString": "enum CoinmonksInternal.JobState"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 73,
+                    "name": "JobState",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 45,
+                    "src": "511:8:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_JobState_$45",
+                      "typeString": "enum CoinmonksInternal.JobState"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "409:118:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 76,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "528:0:1"
+            },
+            "scope": 143,
+            "src": "387:203:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 93,
+              "nodeType": "Block",
+              "src": "785:79:1",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 94,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "endContractComplete",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 91,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 80,
+                  "name": "_jobId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 94,
+                  "src": "668:14:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 79,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "668:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 82,
+                  "name": "_candidate",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 94,
+                  "src": "687:18:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 81,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "687:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 84,
+                  "name": "_employer",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 94,
+                  "src": "709:17:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 83,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "709:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 86,
+                  "name": "_deposit",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 94,
+                  "src": "730:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 85,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "730:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 88,
+                  "name": "_refund",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 94,
+                  "src": "750:15:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 87,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "750:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 90,
+                  "name": "_state",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 94,
+                  "src": "769:15:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_JobState_$45",
+                    "typeString": "enum CoinmonksInternal.JobState"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 89,
+                    "name": "JobState",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 45,
+                    "src": "769:8:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_JobState_$45",
+                      "typeString": "enum CoinmonksInternal.JobState"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "667:118:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 92,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "785:0:1"
+            },
+            "scope": 143,
+            "src": "639:225:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 109,
+              "nodeType": "Block",
+              "src": "1013:118:1",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 110,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "endContractPartial",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 107,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 96,
+                  "name": "_jobId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 110,
+                  "src": "896:14:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 95,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "896:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 98,
+                  "name": "_candidate",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 110,
+                  "src": "915:18:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 97,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "915:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 100,
+                  "name": "_employer",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 110,
+                  "src": "937:17:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 99,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "937:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 102,
+                  "name": "_deposit",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 110,
+                  "src": "958:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 101,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "958:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 104,
+                  "name": "_refund",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 110,
+                  "src": "978:15:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 103,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "978:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 106,
+                  "name": "_state",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 110,
+                  "src": "997:15:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_JobState_$45",
+                    "typeString": "enum CoinmonksInternal.JobState"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 105,
+                    "name": "JobState",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 45,
+                    "src": "997:8:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_JobState_$45",
+                      "typeString": "enum CoinmonksInternal.JobState"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "895:118:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 108,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1013:0:1"
+            },
+            "scope": 143,
+            "src": "868:263:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 125,
+              "nodeType": "Block",
+              "src": "1269:79:1",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 126,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "dispute",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 123,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 112,
+                  "name": "_jobId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 126,
+                  "src": "1152:14:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 111,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1152:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 114,
+                  "name": "_candidate",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 126,
+                  "src": "1171:18:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 113,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1171:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 116,
+                  "name": "_employer",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 126,
+                  "src": "1193:17:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 115,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1193:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 118,
+                  "name": "_deposit",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 126,
+                  "src": "1214:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 117,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1214:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 120,
+                  "name": "_refund",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 126,
+                  "src": "1234:15:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 119,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1234:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 122,
+                  "name": "_state",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 126,
+                  "src": "1253:15:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_JobState_$45",
+                    "typeString": "enum CoinmonksInternal.JobState"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 121,
+                    "name": "JobState",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 45,
+                    "src": "1253:8:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_JobState_$45",
+                      "typeString": "enum CoinmonksInternal.JobState"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1151:118:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 124,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1269:0:1"
+            },
+            "scope": 143,
+            "src": "1135:213:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 141,
+              "nodeType": "Block",
+              "src": "1495:39:1",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 142,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "getEscrowDeposit",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 139,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 128,
+                  "name": "_jobId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 142,
+                  "src": "1378:14:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 127,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1378:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 130,
+                  "name": "_candidate",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 142,
+                  "src": "1397:18:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 129,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1397:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 132,
+                  "name": "_employer",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 142,
+                  "src": "1419:17:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 131,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1419:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 134,
+                  "name": "_deposit",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 142,
+                  "src": "1440:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 133,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1440:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 136,
+                  "name": "_refund",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 142,
+                  "src": "1460:15:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 135,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1460:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 138,
+                  "name": "_state",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 142,
+                  "src": "1479:15:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_JobState_$45",
+                    "typeString": "enum CoinmonksInternal.JobState"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 137,
+                    "name": "JobState",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 45,
+                    "src": "1479:8:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_JobState_$45",
+                      "typeString": "enum CoinmonksInternal.JobState"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1377:118:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 140,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1495:0:1"
+            },
+            "scope": 143,
+            "src": "1352:182:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 144,
+        "src": "65:1479:1"
+      }
+    ],
+    "src": "0:1544:1"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/batman/code/solidity/contracts/CoinmonksInternal.sol",
+    "exportedSymbols": {
+      "CoinmonksInternal": [
+        143
+      ]
+    },
+    "id": 144,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 37,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:1"
+      },
+      {
+        "absolutePath": "/home/batman/code/solidity/contracts/CoinmonksFundManager.sol",
+        "file": "./CoinmonksFundManager.sol",
+        "id": 38,
+        "nodeType": "ImportDirective",
+        "scope": 144,
+        "sourceUnit": 36,
+        "src": "26:36:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 39,
+              "name": "CoinmonksFundManager",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 35,
+              "src": "95:20:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_CoinmonksFundManager_$35",
+                "typeString": "contract CoinmonksFundManager"
+              }
+            },
+            "id": 40,
+            "nodeType": "InheritanceSpecifier",
+            "src": "95:20:1"
+          }
+        ],
+        "contractDependencies": [
+          462,
+          364,
+          35
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 143,
+        "linearizedBaseContracts": [
+          143,
+          35,
+          462,
+          364
+        ],
+        "name": "CoinmonksInternal",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "CoinmonksInternal.JobState",
+            "id": 45,
+            "members": [
+              {
+                "id": 41,
+                "name": "Active",
+                "nodeType": "EnumValue",
+                "src": "135:6:1"
+              },
+              {
+                "id": 42,
+                "name": "Refund",
+                "nodeType": "EnumValue",
+                "src": "143:6:1"
+              },
+              {
+                "id": 43,
+                "name": "Close",
+                "nodeType": "EnumValue",
+                "src": "152:5:1"
+              },
+              {
+                "id": 44,
+                "name": "Dispute",
+                "nodeType": "EnumValue",
+                "src": "160:7:1"
+              }
+            ],
+            "name": "JobState",
+            "nodeType": "EnumDefinition",
+            "src": "119:49:1"
+          },
+          {
+            "canonicalName": "CoinmonksInternal.JobContract",
+            "id": 58,
+            "members": [
+              {
+                "constant": false,
+                "id": 47,
+                "name": "jobId",
+                "nodeType": "VariableDeclaration",
+                "scope": 58,
+                "src": "194:13:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 46,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "194:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 49,
+                "name": "candidate",
+                "nodeType": "VariableDeclaration",
+                "scope": 58,
+                "src": "212:17:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 48,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "212:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 51,
+                "name": "employer",
+                "nodeType": "VariableDeclaration",
+                "scope": 58,
+                "src": "233:16:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 50,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "233:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 53,
+                "name": "deposit",
+                "nodeType": "VariableDeclaration",
+                "scope": 58,
+                "src": "253:15:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 52,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "253:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 55,
+                "name": "refund",
+                "nodeType": "VariableDeclaration",
+                "scope": 58,
+                "src": "272:14:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 54,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "272:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 57,
+                "name": "state",
+                "nodeType": "VariableDeclaration",
+                "scope": 58,
+                "src": "290:14:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_JobState_$45",
+                  "typeString": "enum CoinmonksInternal.JobState"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 56,
+                  "name": "JobState",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 45,
+                  "src": "290:8:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_JobState_$45",
+                    "typeString": "enum CoinmonksInternal.JobState"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "JobContract",
+            "nodeType": "StructDefinition",
+            "scope": 143,
+            "src": "172:136:1",
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 61,
+              "nodeType": "Block",
+              "src": "332:6:1",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 62,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 59,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "323:2:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 60,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "332:0:1"
+            },
+            "scope": 143,
+            "src": "312:26:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 77,
+              "nodeType": "Block",
+              "src": "528:62:1",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 78,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "startContract",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 75,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 64,
+                  "name": "_jobId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 78,
+                  "src": "410:14:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 63,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "410:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 66,
+                  "name": "_candidate",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 78,
+                  "src": "429:18:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 65,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "429:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 68,
+                  "name": "_employer",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 78,
+                  "src": "451:17:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 67,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "451:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 70,
+                  "name": "_deposit",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 78,
+                  "src": "472:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 69,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "472:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 72,
+                  "name": "_refund",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 78,
+                  "src": "492:15:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 71,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "492:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 74,
+                  "name": "_state",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 78,
+                  "src": "511:15:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_JobState_$45",
+                    "typeString": "enum CoinmonksInternal.JobState"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 73,
+                    "name": "JobState",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 45,
+                    "src": "511:8:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_JobState_$45",
+                      "typeString": "enum CoinmonksInternal.JobState"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "409:118:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 76,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "528:0:1"
+            },
+            "scope": 143,
+            "src": "387:203:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 93,
+              "nodeType": "Block",
+              "src": "785:79:1",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 94,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "endContractComplete",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 91,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 80,
+                  "name": "_jobId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 94,
+                  "src": "668:14:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 79,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "668:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 82,
+                  "name": "_candidate",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 94,
+                  "src": "687:18:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 81,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "687:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 84,
+                  "name": "_employer",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 94,
+                  "src": "709:17:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 83,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "709:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 86,
+                  "name": "_deposit",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 94,
+                  "src": "730:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 85,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "730:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 88,
+                  "name": "_refund",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 94,
+                  "src": "750:15:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 87,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "750:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 90,
+                  "name": "_state",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 94,
+                  "src": "769:15:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_JobState_$45",
+                    "typeString": "enum CoinmonksInternal.JobState"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 89,
+                    "name": "JobState",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 45,
+                    "src": "769:8:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_JobState_$45",
+                      "typeString": "enum CoinmonksInternal.JobState"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "667:118:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 92,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "785:0:1"
+            },
+            "scope": 143,
+            "src": "639:225:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 109,
+              "nodeType": "Block",
+              "src": "1013:118:1",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 110,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "endContractPartial",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 107,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 96,
+                  "name": "_jobId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 110,
+                  "src": "896:14:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 95,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "896:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 98,
+                  "name": "_candidate",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 110,
+                  "src": "915:18:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 97,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "915:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 100,
+                  "name": "_employer",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 110,
+                  "src": "937:17:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 99,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "937:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 102,
+                  "name": "_deposit",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 110,
+                  "src": "958:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 101,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "958:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 104,
+                  "name": "_refund",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 110,
+                  "src": "978:15:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 103,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "978:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 106,
+                  "name": "_state",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 110,
+                  "src": "997:15:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_JobState_$45",
+                    "typeString": "enum CoinmonksInternal.JobState"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 105,
+                    "name": "JobState",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 45,
+                    "src": "997:8:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_JobState_$45",
+                      "typeString": "enum CoinmonksInternal.JobState"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "895:118:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 108,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1013:0:1"
+            },
+            "scope": 143,
+            "src": "868:263:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 125,
+              "nodeType": "Block",
+              "src": "1269:79:1",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 126,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "dispute",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 123,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 112,
+                  "name": "_jobId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 126,
+                  "src": "1152:14:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 111,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1152:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 114,
+                  "name": "_candidate",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 126,
+                  "src": "1171:18:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 113,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1171:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 116,
+                  "name": "_employer",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 126,
+                  "src": "1193:17:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 115,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1193:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 118,
+                  "name": "_deposit",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 126,
+                  "src": "1214:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 117,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1214:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 120,
+                  "name": "_refund",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 126,
+                  "src": "1234:15:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 119,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1234:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 122,
+                  "name": "_state",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 126,
+                  "src": "1253:15:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_JobState_$45",
+                    "typeString": "enum CoinmonksInternal.JobState"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 121,
+                    "name": "JobState",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 45,
+                    "src": "1253:8:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_JobState_$45",
+                      "typeString": "enum CoinmonksInternal.JobState"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1151:118:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 124,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1269:0:1"
+            },
+            "scope": 143,
+            "src": "1135:213:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 141,
+              "nodeType": "Block",
+              "src": "1495:39:1",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 142,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "getEscrowDeposit",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 139,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 128,
+                  "name": "_jobId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 142,
+                  "src": "1378:14:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 127,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1378:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 130,
+                  "name": "_candidate",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 142,
+                  "src": "1397:18:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 129,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1397:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 132,
+                  "name": "_employer",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 142,
+                  "src": "1419:17:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 131,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1419:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 134,
+                  "name": "_deposit",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 142,
+                  "src": "1440:16:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 133,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1440:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 136,
+                  "name": "_refund",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 142,
+                  "src": "1460:15:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 135,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1460:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 138,
+                  "name": "_state",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 142,
+                  "src": "1479:15:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_JobState_$45",
+                    "typeString": "enum CoinmonksInternal.JobState"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 137,
+                    "name": "JobState",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 45,
+                    "src": "1479:8:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_JobState_$45",
+                      "typeString": "enum CoinmonksInternal.JobState"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1377:118:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 140,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1495:0:1"
+            },
+            "scope": 143,
+            "src": "1352:182:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 144,
+        "src": "65:1479:1"
+      }
+    ],
+    "src": "0:1544:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2018-10-27T01:42:30.548Z"
+}
