@@ -11,14 +11,14 @@ contract CoinmonksFundManager is Escrow{
 		escrow = new Escrow();
 	}
 
-	function settlement(address employer , address candidate){
+	function settlement(address employer , address candidate, address deposit){
 		//settle employee and candidate
 		//withdraw from escrow
 		//Pay candidate
 		//return sucess
 	}
 
-	function partialSettement(address employer, address candidate , address partialEmployment){
+	function partialSettement(address employer, address candidate ,address deposit,  address parialRefund){
 		//settle employer and candidate and refund parial employer money
 		//withdraw from escrow give amount
 		// pay candidate
